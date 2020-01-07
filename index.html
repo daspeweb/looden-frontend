@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Looden</title>
+        <meta charset="utf-8">
+         <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    </head>
+    <body>
+        <main>
+            <div id="container-main" class="row"></div>
+        </main>
+        
+        <script type="module">
+            import {LoodenController} from "./js/MainLooden.js"            
+            LoodenController.init({
+                root: document.getElementById('container-main')
+            });
+        </script>
+    </body>
+</html>
