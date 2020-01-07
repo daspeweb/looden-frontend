@@ -1,6 +1,6 @@
-import {TextFieldLooden} from '/js/form/fields/Text.js';
+import {TextFieldLooden} from '/js/form/fields/Text.js'
 import {DataMock} from "/js/mock/Data.js"
-
+import {ModalController} from '/js/modal/ModalController.js'
 
 const LoodenController = function(){
     let params
@@ -8,11 +8,14 @@ const LoodenController = function(){
         LoodenController.params = params
         console.log('MainLooden.js iniciada')
         let dt = DataMock.formFieldsAccount();
-        let txtTemplateRendered = ``;
-        dt.forEach((item, index) => {
-            txtTemplateRendered += TextFieldLooden.render(dt[index]).renderedTemplate;
-        });
-        params.root.insertAdjacentHTML('afterbegin', txtTemplateRendered);
+        let modal1 = ModalController.render({
+            root: params.root,
+            header: "Moda de teste",
+            content: dt.map(item=> {return TextFieldLooden.render(item).renderedTemplate}).join(' '),
+            id: 'teste1'
+        }).append();
+
+        modal1.open();
     }
 
     return {init}
