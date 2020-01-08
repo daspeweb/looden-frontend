@@ -4,22 +4,15 @@ const TextFieldLooden  = function(){
     function render(params){
         TextFieldLooden.params = params;
         TextFieldLooden.renderedTemplate = `
-            <div class="${params.classes}">
+            <div class="${params.width}">
                 <label>${params.label}</label>
                 <input type="${params.type}" placeholder="${params.placeholder}">
             </div>
         `;
         return TextFieldLooden;
     }
-    function valid(){
-        let el = document.querySelector('.valid input');
-        el.onkeypress = function(){
-            /\d/g.test(el.value) === true ? el.value = el.value.replace(/[^/a-z]+/g,'') : false;
-        }
-        return TextFieldLooden
-    }
 
-    return {render, valid, renderedTemplate}
+    return {render, renderedTemplate}
 }();
 
 export {TextFieldLooden}
