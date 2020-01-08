@@ -1,6 +1,7 @@
 import {TextFieldLooden} from '/js/form/fields/Text.js'
 import {DataMock} from "/js/mock/Data.js"
 import {ModalController} from '/js/modal/ModalController.js'
+//import Inputmask from "inputmask"
 
 const LoodenController = function(){
     let params
@@ -16,6 +17,7 @@ const LoodenController = function(){
         }).append();
 
         modal1.open();
+        TextFieldLooden.valid();
     }
 
     return {init}

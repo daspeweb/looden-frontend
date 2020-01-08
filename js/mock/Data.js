@@ -5,7 +5,7 @@ const DataMock = function(){
                 type: 'text',
                 label: "Texto",
                 placeholder: "Texto",
-                width: 'col s6',
+                classes: 'col s6 valid',
                 section: 'Dados Gerais',
                 mask: 'text'
             },
@@ -13,7 +13,7 @@ const DataMock = function(){
                 type: 'number',
                 label: "CPF",
                 placeholder: "CPF",
-                width: 'col s6',
+                classes: 'col s6',
                 section: 'Dados Gerais',
                 mask: 'text'
             }
