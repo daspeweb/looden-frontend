@@ -14,7 +14,7 @@ const TextFieldLooden  = function(){
     function valid(){
         let el = document.querySelector('.valid input');
         el.onkeypress = function(){
-            console.log(/\d/g.test(el.value));
+            /\d/g.test(el.value) === true ? el.value = el.value.replace(/[^/a-z]+/g,'') : false;
         }
         return TextFieldLooden
     }
