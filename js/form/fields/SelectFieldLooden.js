@@ -6,6 +6,7 @@ const SelectFieldLooden = function(){
         SelectFieldLooden.params = params;
         SelectFieldLooden.renderedTemplate = `
             <div class="${params.width}">
+                <label>${params.label}</label>
                 <div class="input-field">
                     <select>
                         <option value="" disabled selected>${params.placeholder}</option>

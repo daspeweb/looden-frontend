@@ -4,9 +4,11 @@ const TextareaFieldLooden = function(){
     function render(params){
         TextareaFieldLooden.params = params;
         TextareaFieldLooden.renderedTemplate = `
-        <div class="input-field ${params.width}">
-            <textarea id="textarea" class="materialize-textarea" data-length="${params.length}"></textarea>
-            <label for="textarea">${params.label}</label>
+        <div class="${params.width}">
+            <label>${params.label}</label>
+            <div class="input-field">
+                <textarea id="textarea" class="materialize-textarea" placeholder="${params.placeholder}" maxlength="${params.length}"></textarea>
+            </div>
         </div>
         `;
         return TextareaFieldLooden

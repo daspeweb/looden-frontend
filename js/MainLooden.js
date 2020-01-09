@@ -7,6 +7,7 @@ import {PhoneFieldLooden} from '/js/form/fields/PhoneFieldLooden.js'
 import {TimestampFieldLooden} from '/js/form/fields/TimestampFieldLooden.js'
 import {DataMock} from "/js/mock/Data.js"
 import {ModalController} from '/js/modal/ModalController.js'
+import * as DragDropFile from '/node_modules/fine-uploader/fine-uploader/fine-uploader.js'
 //import Inputmask from "inputmask"
 
 const LoodenController = function(){

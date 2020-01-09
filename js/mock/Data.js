@@ -63,15 +63,7 @@ const DataMock = function(){
                 width: 'col s6',
                 section: 'Dados Gerais',
                 mask: 'text',
-                length: 100
-            },
-            {
-                type: 'color',
-                label: "Color",
-                placeholder: "Color",
-                width: 'col s6',
-                section: 'Dados Gerais',
-                mask: 'text',
+                length: '10'
             },
             {
                 type: 'email',
@@ -93,6 +85,14 @@ const DataMock = function(){
                 type: 'time',
                 label: "Timestamp",
                 placeholder: "Select your time",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+            },
+            {
+                type: 'color',
+                label: "Color",
+                placeholder: "Color",
                 width: 'col s6',
                 section: 'Dados Gerais',
                 mask: 'text',
