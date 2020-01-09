@@ -12,7 +12,7 @@ const DataMock = function(){
             {
                 type: 'date',
                 label: "Date",
-                placeholder: "Date",
+                placeholder: "Select your date",
                 width: 'col s6',
                 section: 'Dados Gerais',
                 mask: 'text'
@@ -47,7 +47,32 @@ const DataMock = function(){
                     4: 'option 4',
                     5: 'option 5'
                 }
-            }
+            },
+            {
+                type: 'textarea',
+                label: "Textarea",
+                placeholder: "Textarea",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+                length: 100
+            },
+            {
+                type: 'color',
+                label: "Color",
+                placeholder: "Color",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+            },
+            {
+                type: 'email',
+                label: "Email",
+                placeholder: "Email",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+            },
         ]
     }
     return {formFieldsAccount}

@@ -7,9 +7,8 @@ const SelectFieldLooden = function(){
         SelectFieldLooden.renderedTemplate = `
             <div class="${params.width}">
                 <div class="input-field">
-                    <label>${params.label}</label>
                     <select>
-                        <option value="" disabled selected>Selecione sua opção</option>
+                        <option value="" disabled selected>${params.placeholder}</option>
                         ${renderOptions(params.options)}
                     </select>
                 </div>

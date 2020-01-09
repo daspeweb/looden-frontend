@@ -5,7 +5,7 @@ const FileFieldLooden = function(){
         FileFieldLooden.params = params;
         FileFieldLooden.renderedTemplate = `
             <div class="${params.width}">
-                <div class="file-field input-field">
+                <div class="file-field input-field" style="margin:0;">
                     <div>
                         <label>${params.label}</label>
                         <input type="${params.type}" multiple>

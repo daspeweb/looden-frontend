@@ -1,6 +1,8 @@
 import {TextFieldLooden} from '/js/form/fields/Text.js'
+import {DateFieldLooden} from '/js/form/fields/DateFieldLooden.js'
 import {SelectFieldLooden} from '/js/form/fields/SelectFieldLooden.js'
 import {FileFieldLooden} from '/js/form/fields/FileFieldLooden.js'
+import {TextareaFieldLooden} from '/js/form/fields/TextareaFieldLooden.js'
 import {DataMock} from "/js/mock/Data.js"
 import {ModalController} from '/js/modal/ModalController.js'
 //import Inputmask from "inputmask"
@@ -15,19 +17,76 @@ const LoodenController = function(){
             root: params.root,
             header: "Moda de teste",
             content: dt.map(item => {
-                if(item.type === 'select'){
-                    return SelectFieldLooden.render(item).renderedTemplate;
+                if(item.type === 'date'){
+                    return DateFieldLooden.render(item).renderedTemplate;
                 }else if(item.type === 'file'){
                     return FileFieldLooden.render(item).renderedTemplate;
+                }else if(item.type === 'select'){
+                    return SelectFieldLooden.render(item).renderedTemplate;
+                }else if(item.type === 'textarea'){
+                    return TextareaFieldLooden.render(item).renderedTemplate;
                 }else{
                     return TextFieldLooden.render(item).renderedTemplate;
                 }
             }).join(' '),
             id: 'teste1'
         }).append();
+        M.FormSelect.init(document.querySelectorAll('select'), {});
+        M.Datepicker.init(document.querySelectorAll('.datepicker'), {
+            container: document.querySelector('body'),
+            i18n: {
+                cancel: 'Cancelar',
+                months: [
+                    'Janeiro',
+                    'Fevereiro',
+                    'Março',
+                    'Abril',
+                    'Maio',
+                    'Junho',
+                    'Julho',
+                    'Agosto',
+                    'Setembro',
+                    'Outubro',
+                    'Novembro',
+                    'Dezembro'
+                ],
+                monthsShort: [ 
+                    'Jan', 
+                    'Fev', 
+                    'Mar', 
+                    'Abr', 
+                    'Maio', 
+                    'Jun', 
+                    'Jul', 
+                    'Ago', 
+                    'Set', 
+                    'Out', 
+                    'Nov', 
+                    'Dez' 
+                ],
+                weekdays: [ 
+                    'Domingo', 
+                    'Segunda-feira', 
+                    'Terça-feira', 
+                    'Quarta-feira', 
+                    'Quinta-feira', 
+                    'Sexta-feira', 
+                    'Sábado' 
+                ],
+                weekdaysShort: [ 
+                    'Dom', 
+                    'Seg', 
+                    'Ter', 
+                    'Qua', 
+                    'Qui', 
+                    'Sex', 
+                    'Sáb'
+                ],
+                weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
+            }
+        });
 
         modal1.open();  
-        M.FormSelect.init(document.querySelectorAll('select, .datepicker'), {});
     }
 
     return {init}
