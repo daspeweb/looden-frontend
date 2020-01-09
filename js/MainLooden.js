@@ -25,6 +25,8 @@ const LoodenController = function(){
                     return SelectFieldLooden.render(item).renderedTemplate;
                 }else if(item.type === 'textarea'){
                     return TextareaFieldLooden.render(item).renderedTemplate;
+                }else if(item.type === 'phone'){
+                    return PhoneFieldLooden.render(item).renderedTemplate;
                 }else{
                     return TextFieldLooden.render(item).renderedTemplate;
                 }

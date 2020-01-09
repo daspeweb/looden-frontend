@@ -10,6 +10,14 @@ const DataMock = function(){
                 mask: 'text'
             },
             {
+                type: 'text',
+                label: "CEP",
+                placeholder: "CEP",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text'
+            },
+            {
                 type: 'date',
                 label: "Date",
                 placeholder: "Select your date",
@@ -69,6 +77,22 @@ const DataMock = function(){
                 type: 'email',
                 label: "Email",
                 placeholder: "Email",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+            },
+            {
+                type: 'tel',
+                label: "Phone",
+                placeholder: "Phone",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+            },
+            {
+                type: 'time',
+                label: "Timestamp",
+                placeholder: "Select your time",
                 width: 'col s6',
                 section: 'Dados Gerais',
                 mask: 'text',
