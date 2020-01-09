@@ -1,19 +1,19 @@
-const DateFieldLooden  = function(){
+const TimestampFieldLooden  = function(){
     let renderedTemplate;
     let params;
     function render(params){
-        DateFieldLooden.params = params;
-        DateFieldLooden.renderedTemplate = `
+        TimestampFieldLooden.params = params;
+        TimestampFieldLooden.renderedTemplate = `
             <div class="${params.width}">
                 <label>${params.label}</label>
-                <input type="text" class="datepicker" placeholder="${params.placeholder}">
+                <input type="text" class="timepicker" placeholder="${params.placeholder}">
             </div>
         `;
 
-        return DateFieldLooden
+        return TimestampFieldLooden
     }
 
     return {render, renderedTemplate}
 }();
 
-export {DateFieldLooden}
+export {TimestampFieldLooden}

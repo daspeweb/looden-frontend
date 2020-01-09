@@ -3,6 +3,8 @@ import {DateFieldLooden} from '/js/form/fields/DateFieldLooden.js'
 import {SelectFieldLooden} from '/js/form/fields/SelectFieldLooden.js'
 import {FileFieldLooden} from '/js/form/fields/FileFieldLooden.js'
 import {TextareaFieldLooden} from '/js/form/fields/TextareaFieldLooden.js'
+import {PhoneFieldLooden} from '/js/form/fields/PhoneFieldLooden.js'
+import {TimestampFieldLooden} from '/js/form/fields/TimestampFieldLooden.js'
 import {DataMock} from "/js/mock/Data.js"
 import {ModalController} from '/js/modal/ModalController.js'
 //import Inputmask from "inputmask"
@@ -27,6 +29,8 @@ const LoodenController = function(){
                     return TextareaFieldLooden.render(item).renderedTemplate;
                 }else if(item.type === 'phone'){
                     return PhoneFieldLooden.render(item).renderedTemplate;
+                }else if(item.type === 'time'){
+                    return TimestampFieldLooden.render(item).renderedTemplate;
                 }else{
                     return TextFieldLooden.render(item).renderedTemplate;
                 }
@@ -34,6 +38,7 @@ const LoodenController = function(){
             id: 'teste1'
         }).append();
         M.FormSelect.init(document.querySelectorAll('select'), {});
+        M.Timepicker.init(document.querySelectorAll('.timepicker'), {container: "body"});
         M.Datepicker.init(document.querySelectorAll('.datepicker'), {
             container: document.querySelector('body'),
             i18n: {
