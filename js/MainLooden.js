@@ -101,8 +101,8 @@ const LoodenController = function(){
                 filesColection += `${item.fullPath} `;
             });
             console.log(filesColection)
-            document.querySelector('input.file-path').placeholder = filesColection;
-            document.querySelector('input[type=file]').value = filesColection;
+            document.querySelector('input.file-path').value = filesColection;
+            //document.querySelector('input[type=file]').value = filesColection;
             console.log('Here are the dropped files', files) // Array of File objects
             console.log('Dropped at coordinates', pos.x, pos.y)
             console.log('Here is the raw FileList object if you need it:', fileList)
