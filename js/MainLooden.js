@@ -7,8 +7,10 @@ import {PhoneFieldLooden} from '/js/form/fields/PhoneFieldLooden.js'
 import {TimestampFieldLooden} from '/js/form/fields/TimestampFieldLooden.js'
 import {DataMock} from "/js/mock/Data.js"
 import {ModalController} from '/js/modal/ModalController.js'
-//import * as DragDropFile from '/node_modules/fine-uploader/fine-uploader/fine-uploader.js'
+import * as dragDrop from '/node_modules/drag-drop/index.js'
+//import * as DragDropFile from '/node_modules/drag-drop/index.js'
 //import Inputmask from "inputmask"
+
 
 const LoodenController = function(){
     let params;
@@ -93,6 +95,19 @@ const LoodenController = function(){
                 weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
             }
         });
+        dragDrop.dragDrop('input[type=file]', (files, pos, fileList, directories) => {
+            let filesColection = '';
+            files.forEach((item, index) => {
+                filesColection += `${item.fullPath} `;
+            });
+            console.log(filesColection)
+            document.querySelector('input.file-path').placeholder = filesColection;
+            document.querySelector('input[type=file]').value = filesColection;
+            console.log('Here are the dropped files', files) // Array of File objects
+            console.log('Dropped at coordinates', pos.x, pos.y)
+            console.log('Here is the raw FileList object if you need it:', fileList)
+            console.log('Here is the list of directories:', directories)
+        })
 
         modal1.open();  
     }
