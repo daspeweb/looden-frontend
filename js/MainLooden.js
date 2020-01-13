@@ -5,6 +5,7 @@ import {FileFieldLooden} from '/js/form/fields/FileFieldLooden.js'
 import {TextareaFieldLooden} from '/js/form/fields/TextareaFieldLooden.js'
 import {PhoneFieldLooden} from '/js/form/fields/PhoneFieldLooden.js'
 import {TimestampFieldLooden} from '/js/form/fields/TimestampFieldLooden.js'
+import {CheckboxFieldLooden} from '/js/form/fields/CheckboxFieldLooden.js'
 import {DataMock} from "/js/mock/Data.js"
 import {ModalController} from '/js/modal/ModalController.js'
 //import * as DragDropFile from '/node_modules/fine-uploader/fine-uploader/fine-uploader.js'
@@ -30,6 +31,8 @@ const LoodenController = function(){
                     return TextareaFieldLooden.render(item).renderedTemplate;
                 }else if(item.type === 'phone'){
                     return PhoneFieldLooden.render(item).renderedTemplate;
+                }else if(item.type === 'checkbox'){
+                    return CheckboxFieldLooden.render(item).renderedTemplate;
                 }else if(item.type === 'time'){
                     return TimestampFieldLooden.render(item).renderedTemplate;
                 }else{
