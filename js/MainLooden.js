@@ -5,10 +5,12 @@ import {FileFieldLooden} from '/js/form/fields/FileFieldLooden.js'
 import {TextareaFieldLooden} from '/js/form/fields/TextareaFieldLooden.js'
 import {PhoneFieldLooden} from '/js/form/fields/PhoneFieldLooden.js'
 import {TimestampFieldLooden} from '/js/form/fields/TimestampFieldLooden.js'
+import {RangeFieldLooden} from '/js/form/fields/RangeFieldLooden.js'
 import {DataMock} from "/js/mock/Data.js"
 import {ModalController} from '/js/modal/ModalController.js'
-//import * as DragDropFile from '/node_modules/fine-uploader/fine-uploader/fine-uploader.js'
-//import Inputmask from "inputmask"
+//import * as UppyPackage from '/node_modules/uppy/dist/uppy.js'
+//import Uppy, { XHRUpload, DragDrop } from '/node_modules/uppy/dist/uppy.js'
+
 
 const LoodenController = function(){
     let params;
@@ -32,6 +34,8 @@ const LoodenController = function(){
                     return PhoneFieldLooden.render(item).renderedTemplate;
                 }else if(item.type === 'time'){
                     return TimestampFieldLooden.render(item).renderedTemplate;
+                }else if(item.type === 'range'){
+                    return RangeFieldLooden.render(item).renderedTemplate;
                 }else{
                     return TextFieldLooden.render(item).renderedTemplate;
                 }
@@ -93,7 +97,12 @@ const LoodenController = function(){
                 weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
             }
         });
-
+        let numberField = document.querySelectorAll('input[type=number]');
+        numberField.forEach((item) => {TextFieldLooden.toInt(item)});
+        let rangeField = document.querySelectorAll('input[type=range]');
+        rangeField.forEach((item) => {
+            item.oninput = () => item.nextElementSibling.textContent = item.value
+        });
         modal1.open();  
     }
 

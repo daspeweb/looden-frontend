@@ -11,8 +11,14 @@ const TextFieldLooden  = function(){
         `;
         return TextFieldLooden;
     }
+    function toInt(el){
+        el.onchange = () => el.value = parseInt(el.value);
+        el.onkeyup = (event) => {
+            event.keyCode === 190 || 188 ?  el.value = el.value.replace(/[^0-9]/g, "") : false;
+        }
+    }
 
-    return {render, renderedTemplate}
+    return {render, renderedTemplate, toInt}
 }();
 
 export {TextFieldLooden}
