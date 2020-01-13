@@ -97,6 +97,24 @@ const DataMock = function(){
                 section: 'Dados Gerais',
                 mask: 'text',
             },
+            {
+                type: 'number',
+                label: "Interger",
+                placeholder: "Interger",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+            },
+            {
+                type: 'range',
+                label: "Ranger",
+                placeholder: "Ranger",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+                min: 0,
+                max: 100
+            },
         ]
     }
     return {formFieldsAccount}

@@ -5,11 +5,11 @@ import {FileFieldLooden} from '/js/form/fields/FileFieldLooden.js'
 import {TextareaFieldLooden} from '/js/form/fields/TextareaFieldLooden.js'
 import {PhoneFieldLooden} from '/js/form/fields/PhoneFieldLooden.js'
 import {TimestampFieldLooden} from '/js/form/fields/TimestampFieldLooden.js'
+import {RangeFieldLooden} from '/js/form/fields/RangeFieldLooden.js'
 import {DataMock} from "/js/mock/Data.js"
 import {ModalController} from '/js/modal/ModalController.js'
-import * as dragDrop from '/node_modules/drag-drop/index.js'
-//import * as DragDropFile from '/node_modules/drag-drop/index.js'
-//import Inputmask from "inputmask"
+//import * as UppyPackage from '/node_modules/uppy/dist/uppy.js'
+//import Uppy, { XHRUpload, DragDrop } from '/node_modules/uppy/dist/uppy.js'
 
 
 const LoodenController = function(){
@@ -34,6 +34,8 @@ const LoodenController = function(){
                     return PhoneFieldLooden.render(item).renderedTemplate;
                 }else if(item.type === 'time'){
                     return TimestampFieldLooden.render(item).renderedTemplate;
+                }else if(item.type === 'range'){
+                    return RangeFieldLooden.render(item).renderedTemplate;
                 }else{
                     return TextFieldLooden.render(item).renderedTemplate;
                 }
@@ -95,20 +97,12 @@ const LoodenController = function(){
                 weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
             }
         });
-        dragDrop.dragDrop('input[type=file]', (files, pos, fileList, directories) => {
-            let filesColection = '';
-            files.forEach((item, index) => {
-                filesColection += `${item.fullPath} `;
-            });
-            console.log(filesColection)
-            document.querySelector('input.file-path').value = filesColection;
-            //document.querySelector('input[type=file]').value = filesColection;
-            console.log('Here are the dropped files', files) // Array of File objects
-            console.log('Dropped at coordinates', pos.x, pos.y)
-            console.log('Here is the raw FileList object if you need it:', fileList)
-            console.log('Here is the list of directories:', directories)
-        })
-
+        let numberField = document.querySelectorAll('input[type=number]');
+        numberField.forEach((item) => {TextFieldLooden.toInt(item)});
+        let rangeField = document.querySelectorAll('input[type=range]');
+        rangeField.forEach((item) => {
+            item.oninput = () => item.nextElementSibling.textContent = item.value
+        });
         modal1.open();  
     }
 
