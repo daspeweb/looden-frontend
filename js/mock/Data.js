@@ -90,17 +90,48 @@ const DataMock = function(){
                 mask: 'text',
             },
             {
-                type: 'color',
-                label: "Color",
-                placeholder: "Color",
+                type: 'interger',
+                label: "Interger",
+                placeholder: "Interger",
                 width: 'col s6',
                 section: 'Dados Gerais',
                 mask: 'text',
             },
             {
-                type: 'number',
-                label: "Interger",
-                placeholder: "Interger",
+                type: 'select multiple',
+                label: "Select Multiple",
+                placeholder: "Select Multiple",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+                options: {
+                    1: 'option 1',
+                    2: 'option 2',
+                    3: 'option 3',
+                    4: 'option 4',
+                    5: 'option 5'
+                }
+            },
+            {
+                type: 'money',
+                label: "Money",
+                placeholder: "Money",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+            },
+            {
+                type: 'subdomain',
+                label: "Subdomain",
+                placeholder: "Subdomain",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+            },
+            {
+                type: 'url',
+                label: "URL",
+                placeholder: "URL",
                 width: 'col s6',
                 section: 'Dados Gerais',
                 mask: 'text',
@@ -115,6 +146,14 @@ const DataMock = function(){
                 min: 0,
                 max: 100
             },
+            {
+                type: 'color',
+                label: "Color",
+                placeholder: "Color",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+            }
         ]
     }
     return {formFieldsAccount}
