@@ -22,7 +22,7 @@ const DataMock = function(){
                 label: "Date",
                 placeholder: "Select your date",
                 width: 'col s6',
-                section: 'Dados Gerais',
+                section: 'Dados Gerais/',
                 mask: 'text'
             },
             {
@@ -81,10 +81,19 @@ const DataMock = function(){
                 section: 'Dados Gerais',
                 mask: 'text',
             },
+        
             {
                 type: 'time',
                 label: "Timestamp",
                 placeholder: "Select your time",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: 'text',
+            },
+            {
+                type: 'checkbox',
+                label: "Checkbox",
+                placeholder: "Checkbox",
                 width: 'col s6',
                 section: 'Dados Gerais',
                 mask: 'text',
@@ -96,7 +105,7 @@ const DataMock = function(){
                 width: 'col s6',
                 section: 'Dados Gerais',
                 mask: 'text',
-            },
+            }
         ]
     }
     return {formFieldsAccount}
