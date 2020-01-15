@@ -11,10 +11,13 @@ import {SelectMultipleFieldLooden} from '/js/form/fields/SelectMultipleFieldLood
 import {MoneyFieldLooden} from '/js/form/fields/MoneyFieldLooden.js'
 import {SubdomainFieldLooden} from '/js/form/fields/SubdomainFieldLooden.js'
 import {URLFieldLooden} from '/js/form/fields/URLFieldLooden.js'
+import {CNPJFieldLooden} from '/js/form/fields/CNPJFieldLooden.js'
+import {CPFFieldLooden} from '/js/form/fields/CPFFieldLooden.js'
+import {CEPFieldLooden} from '/js/form/fields/CEPFieldLooden.js'
+import {MaskController} from '/js/form/mask/MaskController.js'
+import {Validators} from '/js/form/validations/Validators.js'
 import {DataMock} from "/js/mock/Data.js"
 import {ModalController} from '/js/modal/ModalController.js'
-//import * as UppyPackage from '/node_modules/uppy/dist/uppy.js'
-//import Uppy, { XHRUpload, DragDrop } from '/node_modules/uppy/dist/uppy.js'
 
 
 const LoodenController = function(){
@@ -50,6 +53,12 @@ const LoodenController = function(){
                     return SubdomainFieldLooden.render(item).renderedTemplate;
                 }else if(item.type === 'url'){
                     return URLFieldLooden.render(item).renderedTemplate;
+                }else if(item.type === 'cnpj'){
+                    return CNPJFieldLooden.render(item).renderedTemplate;
+                }else if(item.type === 'cpf'){
+                    return CPFFieldLooden.render(item).renderedTemplate;
+                }else if(item.type === 'cep'){
+                    return CEPFieldLooden.render(item).renderedTemplate;
                 }else{
                     return TextFieldLooden.render(item).renderedTemplate;
                 }
@@ -111,6 +120,13 @@ const LoodenController = function(){
                 weekdaysAbbrev: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
             }
         });
+        
+        /*MaskController
+        .mask({mask: "999.999.999-99", el: ".type-cpf", validation: Validators.validCPF})
+        .mask({mask: "99.999.999/9999-99", el: ".type-cnpj", validation: Validators.validCNPJ})
+        .mask({mask: "99.999-999", el: ".type-cep", validation: Validators.validCEP})
+        .mask({mask: "aaaa@aaa.aa", el: "[type=email]"})
+        .mask({mask: "(99) 9999[9]-9999", el: "[type=tel]"})*/
         IntergerFieldLooden.toInt();
         MoneyFieldLooden.toMoney();
         URLFieldLooden.renderLink();

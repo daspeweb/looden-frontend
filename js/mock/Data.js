@@ -2,20 +2,34 @@ const DataMock = function(){
     function formFieldsAccount(){
         return [
             {
-                type: 'text',
+                type: 'cpf',
+                label: "CPF",
+                placeholder: "CPF",
+                width: 'col s6',
+                section: 'Dados Gerais',
+                mask: '999.999.999-99',
+                name: 'cpf',
+                msgError: 'Por favor, insira um CPF válido (000.000.000-00)'
+            },
+            {
+                type: 'cnpj',
                 label: "CNPJ",
                 placeholder: "CNPJ",
                 width: 'col s6',
                 section: 'Dados Gerais',
-                mask: 'text'
+                mask: '99.999.999/9999-99',
+                name: 'cnpj',
+                msgError: 'Por favor, insira um CNPJ válido'
             },
             {
-                type: 'text',
+                type: 'cep',
                 label: "CEP",
                 placeholder: "CEP",
                 width: 'col s6',
                 section: 'Dados Gerais',
-                mask: 'text'
+                mask: '00.000-000',
+                name: 'CEP',
+                msgError: 'Por favor, insira um CEP válido'
             },
             {
                 type: 'date',

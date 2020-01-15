@@ -4,18 +4,14 @@
         <title>Looden</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="../node_modules/uppy/dist/uppy.min.css">
+        <link rel="stylesheet" href="/css/looden/looden.css">
     </head>
     <body>
-        <style>
-            .input-field, textarea{
-                margin: 0!important;
-            }
-        </style>
         <main>
             <div id="container-main" class="row"></div>
         </main>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="/node_modules/inputmask/dist/inputmask.js"></script>
         <script type="module">
             import {LoodenController} from "./js/MainLooden.js"
             LoodenController.init({root: document.getElementById('container-main')});

@@ -6,7 +6,7 @@ const TextFieldLooden  = function(){
         TextFieldLooden.renderedTemplate = `
             <div class="${params.width}">
                 <label>${params.label}</label>
-                <input type="${params.type}" placeholder="${params.placeholder}">
+                <input type="${params.type}" placeholder="${params.placeholder}" class="${params.type === "email" ? "type-email" : false}">
             </div>
         `;
         return TextFieldLooden;
